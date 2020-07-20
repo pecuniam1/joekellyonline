@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Joe Kelly homepage</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="js/script.js"></script>
+	<!-- <script src="https://kit.fontawesome.com/0f586da1fb.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+	<div id="fullscreen-background">
+		<video poster autoplay muted loop id="video-background">
+			<source src="video/city.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div id="wrapper">
+		<header>
+			<div>
+				<object data="images/name.svg"></object>
+			</div>
+			<div class="center-title" style="color:white;">
+				Full Stack Developer
+			</div>
+			<nav role="navigation">
+				<div class='nav-item'>
+					<a href="javascript:goHome()">Home</a>
+				</div>
+				<div class='nav-item'>
+					<a href="javascript:goResume()">Resume</a>
+				</div>
+			</nav>
+		</header>
+	</div>
+	<div id="content">
+		<div id="home-div" class="content-div">My name is Joe Kelly and I am a full stack developer.
+			<div class="row">
+				<img src="images/html5.svg" alt="html logo"></img>
+				<p>I have been using html since version 1.0. In high school I had a website named The TI-Experience
+					which was dedicated to programming on the TI-85 calculator. This was in the late 90s/early 2000s.
+				</p>
+			</div>
+			<div class="row">
+				<p>I use CSS more than many other tools because it is a fast and native way to access elements.</p>
+				<img src="images/css3.svg"></img>
+			</div>
+			<div class="row">
+				<img src="images/js.svg"></img>
+				<p>I have been using Javascript since it was first being experimented with on Netscape Navigator.</p>
+			</div>
+			<div class="row">
+				<p>I know AngularJS</p>
+				<img src="images/angularjs.svg"></img>
+			</div>
+			<div class="row">
+				<img src="images/php.svg"></img>
+				<p>I first learned PHP before it was object-oriented and have been using it ever since. My skill as a
+					progammer has grown much in the same way that PHP has grown.</p>
+			</div>
+		</div>
+		<div id="resume-div" class="content-div">resume</div>
+	</div>
+	<!------- sticky footer ---------->
+	<footer></footer>
+</body>
+</html>
