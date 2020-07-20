@@ -10,7 +10,7 @@
 	<!-- <script src="https://kit.fontawesome.com/0f586da1fb.js" crossorigin="anonymous"></script> -->
 </head>
 
-<body>
+<body onload="goHome()">
 	<div id="fullscreen-background">
 		<video poster autoplay muted loop id="video-background">
 			<source src="video/city.mp4" type="video/mp4">
@@ -44,25 +44,35 @@
 			</div>
 			<div class="row">
 				<p>I use CSS more than many other tools because it is a fast and native way to access elements.</p>
-				<img src="images/css3.svg"></img>
+				<img src="images/css3.svg" alt="css logo"></img>
 			</div>
 			<div class="row">
-				<img src="images/js.svg"></img>
+				<img src="images/scss.svg" alt="scss logo"></img>
+				<p>CSS is a valuable tool, but I use SCSS.</p>
+			</div>
+			<div class="row">
 				<p>I have been using Javascript since it was first being experimented with on Netscape Navigator.</p>
+				<img src="images/js.svg" alt="javascript logo"></img>
 			</div>
 			<div class="row">
+				<img src="images/angularjs.svg" alt="angular js logo"></img>
 				<p>I know AngularJS</p>
-				<img src="images/angularjs.svg"></img>
 			</div>
 			<div class="row">
-				<img src="images/php.svg"></img>
-				<p>I first learned PHP before it was object-oriented and have been using it ever since. My skill as a
-					progammer has grown much in the same way that PHP has grown.</p>
+				<p>I first learned PHP before it was object-oriented and have been using it ever since. My skill as a progammer has grown much in the same way that PHP has grown.</p>
+				<img src="images/php.svg" alt="php logo"></img>
 			</div>
 		</div>
 		<div id="resume-div" class="content-div">resume</div>
 	</div>
 	<!------- sticky footer ---------->
-	<footer></footer>
+	<footer>
+		<a href="https://github.com/pecuniam1">
+			<img src="images/github.png" alt="github logo">
+		</a>
+		<a href="http://www.linkedin.com/in/thejoekelly">
+			<img src="images/linkedin.png" alt="github logo">
+		</a>
+	</footer>
 </body>
 </html>

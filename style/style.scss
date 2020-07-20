@@ -26,13 +26,13 @@ body {
 	}
 	div#wrapper {
 		header {
-			background-color:black;
+			background-color:rgba(0,0,0,0.4);
 			padding-top:5px;
 			font-size:1.2rem;
 			display:flex;
 			justify-content:space-between;
 			div.center-title {
-				margin-top:11px;
+				margin-top:5px;
 				font-size:1.7rem;
 			}
 			nav {
@@ -61,24 +61,32 @@ body {
 	}
 /************ content **************/
 	div#content {
+		div.content-div {
+			display:none;
+		}
 		div#home-div {
-			width:90vw;
+			width:80vw;
 			height:300px;
-			background-color:lightcyan;
 			margin:0 auto;
 			div.row {
-				&:nth-child(odd) {
-					background-color:red;
-				}
+				// &:nth-child(odd) {
+				// 	background-color:lightgoldenrodyellow;
+				// }
+				// &:nth-child(even) {
+				// 	background-color:lightcyan;
+				// }
 				padding:10px;
 				height:70px;
 				display:flex;
 				img {
+					padding:0 10px;
 					height:60px;
 					float:left;
 					flex-grow:1;
 				}
 				p {
+					color:white;
+					font-size:1.2em;
 					flex-grow:2;
 				}
 			}
@@ -89,9 +97,15 @@ body {
 		position:absolute;
 		bottom:0;
 		left:0;
-		width:100%;
-		height:50px;
-		background-color:black;
+		width:calc(100% - 30px);
+		height:33px;
+		padding:15px;
+		background-color:rgba(0,0,0,0.9);
 		color:white;
+		img {
+			float:right;
+			height:32px;
+			margin-right:29px;
+		}
 	}
 }
