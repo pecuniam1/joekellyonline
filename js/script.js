@@ -1,3 +1,6 @@
+function openMenu() {
+	console.log("out");
+}
 function goHome() {
 	clearAll();
 	let home = document.getElementById("home-div");

@@ -17,9 +17,15 @@
 		</video>
 	</div>
 	<div id="wrapper">
+		<!-- desktop header -->
 		<header>
 			<div>
 				<object data="images/name.svg"></object>
+			</div>
+			<div id="hamburger" onclick="openMenu(this)">
+				<div id="ham1"></div>
+				<div id="ham2"></div>
+				<div id="ham3"></div>
 			</div>
 			<div class="center-title" style="color:white;">
 				Full Stack Developer
@@ -33,9 +39,10 @@
 				</div>
 			</nav>
 		</header>
+		<div class="clearfix"></div>
 	</div>
 	<div id="content">
-		<div id="home-div" class="content-div">My name is Joe Kelly and I am a full stack developer.
+		<div id="home-div" class="content-div" style="background-color:red;">My name is Joe Kelly and I am a full stack developer.
 			<div class="row">
 				<img src="images/html5.svg" alt="html logo"></img>
 				<p>I have been using html since version 1.0. In high school I had a website named The TI-Experience
@@ -63,7 +70,11 @@
 				<img src="images/php.svg" alt="php logo"></img>
 			</div>
 		</div>
-		<div id="resume-div" class="content-div">resume</div>
+		<!----------resume ----------->
+		<div id="resume-div" class="content-div">
+			<div style="height:20px;width:100%;"></div>
+			<embed src="resume.pdf" width="800" height="800" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+		</div>
 	</div>
 	<!------- sticky footer ---------->
 	<footer>

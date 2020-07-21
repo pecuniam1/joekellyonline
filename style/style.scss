@@ -1,3 +1,5 @@
+$breakpoint:700px;
+$topbar:67px;
 @font-face {
 	font-family:NotoSans;
 	src:url(../fonts/NotoSansJP-Regular.otf);
@@ -25,23 +27,51 @@ body {
 		}
 	}
 	div#wrapper {
+		height:$topbar;
 		header {
 			background-color:rgba(0,0,0,0.4);
 			padding-top:5px;
 			font-size:1.2rem;
-			display:flex;
-			justify-content:space-between;
+			@media screen and (min-width:$breakpoint) {
+				display:flex;
+				justify-content:space-between;
+			}
+			div>object {
+				margin-left:15px;
+				float:left;
+			}
 			div.center-title {
+				display:none;
 				margin-top:5px;
 				font-size:1.7rem;
+				@media screen and (min-width:$breakpoint) {
+					display:block;
+				}
+			}
+			div#hamburger {
+				margin:8px 23px 0 0;
+				float:right;
+				@media screen and (min-width:$breakpoint) {
+					display:none;
+				}
+				cursor:pointer;
+				div#ham1,div#ham2,div#ham3 {
+					width:35px;
+					height:5px;
+					background-color:white;
+					margin:5px 0;
+				}
 			}
 			nav {
 				margin-top:7px;
 				float:right;
 				div.nav-item {
+					display:none;
+					@media screen and (min-width:$breakpoint) {
+						display:inline-block;
+					}
 					cursor:pointer;
 					padding:10px;
-					display:inline-block;
 					margin-right:20px;
 					background-color:black;
 					&:hover {
@@ -66,7 +96,6 @@ body {
 		}
 		div#home-div {
 			width:80vw;
-			height:300px;
 			margin:0 auto;
 			div.row {
 				// &:nth-child(odd) {
@@ -91,10 +120,16 @@ body {
 				}
 			}
 		}
+		div#resume-div {
+			margin-top:30px;
+			width:800px;
+			height:800px;
+			margin:0 auto;
+		}
 	}
 /************** footer **************/
 	footer {
-		position:absolute;
+		position:fixed;
 		bottom:0;
 		left:0;
 		width:calc(100% - 30px);

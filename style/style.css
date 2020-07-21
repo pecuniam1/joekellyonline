@@ -32,21 +32,61 @@ body div#fullscreen-background div#video-background {
   height: 100%;
 }
 
+body div#wrapper {
+  height: 67px;
+}
+
 body div#wrapper header {
   background-color: rgba(0, 0, 0, 0.4);
   padding-top: 5px;
   font-size: 1.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+@media screen and (min-width: 700px) {
+  body div#wrapper header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+body div#wrapper header div > object {
+  margin-left: 15px;
+  float: left;
 }
 
 body div#wrapper header div.center-title {
+  display: none;
   margin-top: 5px;
   font-size: 1.7rem;
+}
+
+@media screen and (min-width: 700px) {
+  body div#wrapper header div.center-title {
+    display: block;
+  }
+}
+
+body div#wrapper header div#hamburger {
+  margin: 8px 23px 0 0;
+  float: right;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  body div#wrapper header div#hamburger {
+    display: none;
+  }
+}
+
+body div#wrapper header div#hamburger div#ham1, body div#wrapper header div#hamburger div#ham2, body div#wrapper header div#hamburger div#ham3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 5px 0;
 }
 
 body div#wrapper header nav {
@@ -55,11 +95,17 @@ body div#wrapper header nav {
 }
 
 body div#wrapper header nav div.nav-item {
+  display: none;
   cursor: pointer;
   padding: 10px;
-  display: inline-block;
   margin-right: 20px;
   background-color: black;
+}
+
+@media screen and (min-width: 700px) {
+  body div#wrapper header nav div.nav-item {
+    display: inline-block;
+  }
 }
 
 body div#wrapper header nav div.nav-item:hover {
@@ -82,7 +128,6 @@ body div#content div.content-div {
 
 body div#content div#home-div {
   width: 80vw;
-  height: 300px;
   margin: 0 auto;
 }
 
@@ -111,8 +156,15 @@ body div#content div#home-div div.row p {
           flex-grow: 2;
 }
 
+body div#content div#resume-div {
+  margin-top: 30px;
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+
 body footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: calc(100% - 30px);
