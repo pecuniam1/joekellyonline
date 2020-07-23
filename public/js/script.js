@@ -16,16 +16,10 @@ function toggleMenu() {
         collapseMobileNavMenu();
     }
 }
-function goHome() {
+function changePage(divname) {
     clearAll();
-    var home = document.getElementById("home-div");
-    home.style.display = "block";
-    collapseMobileNavMenu();
-}
-function goResume() {
-    clearAll();
-    var resume = document.getElementById("resume-div");
-    resume.style.display = "block";
+    var div = document.getElementById(divname);
+    div.style.display = "block";
     collapseMobileNavMenu();
 }
 function clearAll() {
