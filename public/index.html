@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Joe Kelly homepage</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+	<!-- <script src="https://kit.fontawesome.com/0f586da1fb.js" crossorigin="anonymous"></script> -->
+</head>
+<body onload="goHome()"><!-- so that the home-div displays on load -->
+	<div id="fullscreen-background">
+		<video poster autoplay muted loop id="video-background">
+			<source src="video/city.mp4" type="video/mp4">
+		</video>
+	</div>
+	<!-- desktop header -->
+	<header>
+		<img src="images/name.svg"></img>
+		<div>
+			<div id="nav-links">
+				<!-- must be bumper here for mobile if someone scrolls down -->
+				<a href="javascript:void(0)" onclick="goHome()">Home</a>
+				<a href="javascript:void(0)" onclick="goResume()">Resume</a>
+			</div>
+			<a id="hamburger" href="javascript:void(0)" onclick="toggleMenu()">&#9776;</a>
+		</div>
+	</header>
+	<div id="content">
+		<div id="home-div" class="content-div">
+			<h2>Front End</h2>
+			<div class="logos">
+				<img src="images/html5.svg" alt="html logo"></img>
+				<img src="images/css3.svg" alt="css logo"></img>
+				<img src="images/scss.svg" alt="scss logo"></img>
+				<img src="images/js.svg" alt="javascript logo"></img>
+				<img src="images/jquery.svg" alt="jquery logo"></img>
+				<img src="images/angularjs.svg" alt="angular js logo"></img>
+				<img src="images/typescript.svg" alt="typescript logo"></img>
+			</div>
+			<h2>Back End</h2>
+			<div class="logos">
+				<img src="images/slim.png" alt="slim logo"></img>
+				<img src="images/php.svg" alt="php logo"></img>
+				<img src="images/composer.png" alt="composer logo"></img>
+			</div>
+			<h2>Developer Tools</h2>
+			<div class="logos">
+				<img src="images/git.svg" alt="git logo"></img>
+				<img src="images/vscode.svg" alt="vscode logo"></img>
+				<img src="images/linux.svg" alt="linux logo"></img>
+				<img src="images/npm.svg" alt="npm logo"></img>
+				<img src="images/bash.png" alt="bash logo"></img>
+				<img src="images/docker.png" alt="docker logo"></img>
+			</div>
+		</div>
+		<!----------resume ----------->
+		<div id="resume-div" class="content-div">
+			<embed src="resume.pdf" width="500" height="700" alt="pdf"
+				pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+		</div>
+	</div>
+	<!------- sticky footer ---------->
+	<footer>
+		<div>©2020 Joe Kelly</div>
+		<a href="https://github.com/pecuniam1">
+			<img src="images/github.png" alt="github logo">
+		</a>
+		<a href="http://www.linkedin.com/in/thejoekelly">
+			<img src="images/linkedin.png" alt="github logo">
+		</a>
+	</footer>
+</body>
+</html>

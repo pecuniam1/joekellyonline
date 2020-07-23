@@ -1,0 +1,12 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"outFile": "public/js/script.js",
+		"removeComments": true,
+		"sourceMap": true,
+		"noImplicitAny": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
