@@ -12,7 +12,7 @@ window.addEventListener('resize', collapseMobileNavMenu);
  * Collpases the mobile nav menu.
  * @param {HTMLElement} navMenu - The nav menu element with id nav-links.
  */
-function collapseMobileNavMenu() {
+function collapseMobileNavMenu() : void {
 	let navMenu = document.getElementById("nav-links");
 	navMenu.style.width = "0px";
 	if (window.innerWidth >= BREAKPOINT) {
@@ -22,7 +22,7 @@ function collapseMobileNavMenu() {
 /**
  * Toggles the mobile menu.
  */
-function toggleMenu() {
+function toggleMenu() : void {
 	let navMenu = document.getElementById("nav-links");
 	if (navMenu.style.width != "250px") {
 		navMenu.style.width = "250px";
@@ -31,27 +31,19 @@ function toggleMenu() {
 	}
 }
 /**
- * Shows the home div. This function is also called once on body load.
+ * Changes the page base on whatever div id is passed.
+ * @param {string} divname - The id of the div.
  */
-function goHome() {
+function changePage(divname: string) : void {
 	clearAll();
-	let home = document.getElementById("home-div");
-	home.style.display = "block";
-	collapseMobileNavMenu();
-}
-/**
- * Shows the resume div.
- */
-function goResume() {
-	clearAll();
-	let resume = document.getElementById("resume-div");
-	resume.style.display = "block";
+	let div:HTMLElement = document.getElementById(divname);
+	div.style.display = "block";
 	collapseMobileNavMenu();
 }
 /**
  * Removes all of the content-divs.
  */
-function clearAll() {
+function clearAll() : void {
 	let all = document.getElementsByClassName("content-div") as HTMLCollectionOf<HTMLElement>;
 	for (let i=0; i<all.length; i++) {
 		all[i].style.display = "none";
