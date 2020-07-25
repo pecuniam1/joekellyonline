@@ -7,19 +7,19 @@ window.addEventListener('resize', windowResize);
 
 function windowResize() {
 	resetHamburger();
-	collapseMobileNavMenu();
+	// collapseMobileNavMenu();
 }
 /**
  * Collpases the mobile nav menu.
  * @param {HTMLElement} navMenu - The nav menu element with id nav-links.
  */
-function collapseMobileNavMenu() : void {
-	let navMenu = document.getElementById("nav-links");
-	navMenu.style.width = "0px";
-	if (window.innerWidth >= BREAKPOINT) {
-		navMenu.style.width = "auto";
-	}
-}
+// function collapseMobileNavMenu() : void {
+// 	let navMenu = document.getElementById("nav-links");
+// 	navMenu.style.width = "0px";
+// 	if (window.innerWidth >= BREAKPOINT) {
+// 		navMenu.style.width = "auto";
+// 	}
+// }
 /**
  * Toggles the menu on and off. Also toggles the menu pane.
  */
@@ -27,6 +27,7 @@ function toggleMenu() {
 	document.getElementsByClassName('menu-top')[0].classList.toggle('menu-top-click');
 	document.getElementsByClassName('menu-middle')[0].classList.toggle('menu-middle-click');
 	document.getElementsByClassName('menu-bottom')[0].classList.toggle('menu-bottom-click');
+	document.getElementById('nav-links').classList.toggle('open-menu');
 }
 /**
  * Resets the hamburger menu to a closed state and hides menu pane.
@@ -35,6 +36,7 @@ function resetHamburger() {
 	document.getElementsByClassName('menu-top')[0].classList.remove('menu-top-click');
 	document.getElementsByClassName('menu-middle')[0].classList.remove('menu-middle-click');
 	document.getElementsByClassName('menu-bottom')[0].classList.remove('menu-bottom-click');
+	document.getElementById('nav-links').classList.remove('open-menu');
 }
 /**
  * Changes the page base on whatever div id is passed.
@@ -44,7 +46,7 @@ function changePage(divname: string) : void {
 	clearAll();
 	let div:HTMLElement = document.getElementById(divname);
 	div.style.display = "block";
-	collapseMobileNavMenu();
+	resetHamburger();
 }
 /**
  * Removes all of the content-divs.

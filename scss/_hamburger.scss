@@ -1,7 +1,7 @@
 // _hamburger.scss
 $hamburger-bar:15px;
 div#hamburger {
-	@media only screen and (min-width:$breakpoint) {
+	@media only screen and (min-width:$breakpoint-min) {
 		display:none;
 	}
 	width:$topbar-height;
@@ -13,7 +13,7 @@ div#hamburger {
 		right: 25px;
 		border-top: 7px solid white;
 		width: 50px;
-		transition: 0.55s;
+		transition: 0.5s;
 	}
 
 	span.menu-top {
@@ -32,7 +32,7 @@ div#hamburger {
 		backface-visibility: hidden;
 		top: 30px;
 		transform: rotate(40deg);
-		transition: 0.55s 0.5s;
+		transition: 0.25s 0.75s;
 	}
 
 	span.menu-middle-click {
@@ -43,6 +43,6 @@ div#hamburger {
 		backface-visibility: hidden;
 		top: 30px;
 		transform: rotate(-40deg);
-		transition: 0.55s 0.5s;
+		transition: 0.25s 0.75s;
 	}
 }
