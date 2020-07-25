@@ -10,28 +10,30 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+	<base href="https://www.joekellyonline.com/" target="_blank">
+	<meta name="author" content="Joe Kelly"></meta>
 	<script src="js/script.js"></script>
 </head>
-<body onload="changePage('home-div')"><!-- so that the home-div displays on load -->
+<body onload="changePage('home')"><!-- so that the home-div displays on load -->
 	<video autoplay muted loop id="video-background">
 		<source src="video/city.mp4" type="video/mp4">
 	</video>
 	<!-- desktop header -->
 	<header id="header">
 		<img src="images/name.svg"></img>
-		<div>
+		<nav>
 			<div id="nav-links">
 				<!-- must be bumper here for mobile if someone scrolls down -->
-				<a href="javascript:void(0)" onclick="changePage('home-div')">Home</a>
-				<a href="javascript:void(0)" onclick="changePage('resume-div')">Resume</a>
-				<a href="javascript:void(0)" onclick="changePage('about-div')">About Me</a>
+				<a href="javascript:void(0)" onclick="changePage('home')">Home</a>
+				<a href="javascript:void(0)" onclick="changePage('resume')">Resume</a>
+				<a href="javascript:void(0)" onclick="changePage('about')">About Me</a>
 			</div>
 			<a id="hamburger" href="javascript:void(0)" onclick="toggleMenu()">&#9776;</a>
-		</div>
+		</nav>
 	</header>
 	<div id="content">
 		<!------------- home-div ----------------->
-		<div id="home-div" class="content-div">
+		<article id="home" class="content">
 			<h2>Front End</h2>
 			<div class="logos">
 				<img src="images/html5.svg" alt="html logo"></img>
@@ -57,15 +59,15 @@
 				<img src="images/bash.png" alt="bash logo"></img>
 				<img src="images/docker.png" alt="docker logo"></img>
 			</div>
-		</div>
+		</article>
 		<!----------resume-div ----------->
 		<!----- TODO resume does not load on mobile because of flash? ------>
-		<div id="resume-div" class="content-div">
+		<article id="resume" class="content">
 			<embed src="resume.pdf" width="500" height="700" alt="pdf"
 				pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-		</div>
+		</article>
 		<!------------- about-div --------------->
-		<div id="about-div" class="content-div">
+		<article id="about" class="content">
 			<h2>About Me</h2>
 			<h3>I am a full stack Developer.</h3>
 			<p>My first computer was a PC-compatible Canon manufactured in the late 1980s and I have been in love with computers ever since.</p>
@@ -74,7 +76,7 @@
 			<p>I spent several years studying improv, acting, and comedy writing at the Second City Training Center in Chicago, IL. This amazing experience has taught me to listen to other, learn to lead and follow when necessary.</p>
 			<p>I have been either a bartender or cook my entire life. I don't do much bartending anymore, but I still love to cook. I grew up learning about Italian food because my mother is Italian.</p>
 		</div>
-	</div>
+	</article>
 	<!------- sticky footer ---------->
 	<footer>
 		<div>©2020 Joe Kelly</div>

@@ -44,7 +44,7 @@ function changePage(divname: string) : void {
  * Removes all of the content-divs.
  */
 function clearAll() : void {
-	let all = document.getElementsByClassName("content-div") as HTMLCollectionOf<HTMLElement>;
+	let all = document.getElementsByClassName("content") as HTMLCollectionOf<HTMLElement>;
 	for (let i=0; i<all.length; i++) {
 		all[i].style.display = "none";
 	}

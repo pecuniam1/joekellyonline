@@ -23,7 +23,7 @@ function changePage(divname) {
     collapseMobileNavMenu();
 }
 function clearAll() {
-    var all = document.getElementsByClassName("content-div");
+    var all = document.getElementsByClassName("content");
     for (var i = 0; i < all.length; i++) {
         all[i].style.display = "none";
     }
