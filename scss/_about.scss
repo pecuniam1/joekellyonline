@@ -9,7 +9,9 @@ article#about {
 	h3 {
 		margin-bottom:20px;
 	}
-	p:not(:last-child) {
-		margin-bottom:23px;
+	p{
+		&:not(:last-child) {
+			margin-bottom:23px;
+		}
 	}
 }
