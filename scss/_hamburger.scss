@@ -1,7 +1,7 @@
 // _hamburger.scss
 $hamburger-bar:15px;
 div#hamburger {
-	@media only screen and (min-width:$breakpoint-min) {
+	@media only screen and (min-width:$breakpoint) {
 		display:none;
 	}
 	width:$topbar-height;

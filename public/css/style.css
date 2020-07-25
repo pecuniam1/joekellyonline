@@ -57,13 +57,13 @@ article#resume {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 701px) {
+@media only screen and (max-width: 699px) {
   article#resume {
     width: 100vw;
   }
 }
 
-@media only screen and (max-width: 701px) {
+@media only screen and (max-width: 699px) {
   article#resume iframe {
     display: none;
   }
@@ -79,7 +79,7 @@ div#content article.content {
   display: none;
 }
 
-@media only screen and (max-width: 701px) {
+@media only screen and (max-width: 699px) {
   article#about {
     width: 90vw;
     margin-top: 0;
@@ -192,7 +192,7 @@ nav div#nav-links {
   margin-top: 12px;
 }
 
-@media only screen and (max-width: 701px) {
+@media only screen and (max-width: 699px) {
   nav div#nav-links {
     background-color: rgba(0, 0, 0, 0.9);
     float: left;
@@ -215,7 +215,7 @@ nav div#nav-links a {
   display: block;
 }
 
-@media only screen and (max-width: 701px) {
+@media only screen and (max-width: 699px) {
   nav div#nav-links a {
     padding: 39px 0 15px 29px;
   }
