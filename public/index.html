@@ -27,7 +27,11 @@
 				<a href="javascript:void(0)" onclick="changePage('resume')">Resume</a>
 				<a href="javascript:void(0)" onclick="changePage('about')">About Me</a>
 			</div>
-			<a id="hamburger" href="javascript:void(0)" onclick="toggleMenu()">&#9776;</a>
+			<div id="hamburger" onclick="toggleMenu()">
+				<span class="layer menu-top"></span>
+				<span class="layer menu-middle"></span>
+				<span class="layer menu-bottom"></span>
+			</div>
 		</nav>
 	</header>
 	<div id="content">
@@ -63,6 +67,7 @@
 		<!----- TODO resume does not load on mobile because of flash? ------>
 		<article id="resume" class="content">
 			<iframe src="docs/resume.pdf" width="500" height="710"></iframe>
+			<div>Download my resume <a href="docs/resume.pdf">here</a>, or view in a larger browser window.</div>
 		</article>
 		<!------------- about-div --------------->
 		<article id="about" class="content">
