@@ -4,7 +4,8 @@
 		"outFile": "public/js/script.js",
 		"removeComments": true,
 		"sourceMap": true,
-		"noImplicitAny": true
+		"noImplicitAny": true,
+		"watch": true
 	},
 	"exclude": [
 		"node_modules"

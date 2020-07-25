@@ -1,5 +1,9 @@
 var BREAKPOINT = 700;
-window.addEventListener('resize', collapseMobileNavMenu);
+window.addEventListener('resize', windowResize);
+function windowResize() {
+    resetHamburger();
+    collapseMobileNavMenu();
+}
 function collapseMobileNavMenu() {
     var navMenu = document.getElementById("nav-links");
     navMenu.style.width = "0px";
@@ -11,6 +15,11 @@ function toggleMenu() {
     document.getElementsByClassName('menu-top')[0].classList.toggle('menu-top-click');
     document.getElementsByClassName('menu-middle')[0].classList.toggle('menu-middle-click');
     document.getElementsByClassName('menu-bottom')[0].classList.toggle('menu-bottom-click');
+}
+function resetHamburger() {
+    document.getElementsByClassName('menu-top')[0].classList.remove('menu-top-click');
+    document.getElementsByClassName('menu-middle')[0].classList.remove('menu-middle-click');
+    document.getElementsByClassName('menu-bottom')[0].classList.remove('menu-bottom-click');
 }
 function changePage(divname) {
     clearAll();
