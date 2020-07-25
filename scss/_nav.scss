@@ -1,0 +1,29 @@
+// _nav.scss
+nav {
+	float:right;
+	div#nav-links {
+		margin-top:12px;
+		@media only screen and (max-width:$breakpoint) {
+			background-color:rgba(0,0,0,0.9);
+			float:left;
+			position:fixed;
+			top:64px;
+			right:0;
+			margin-top:0;
+			width:0px;
+			transition: width 0.5s;
+		}
+		a {
+			@media only screen and (max-width:$breakpoint) {
+				padding:30px 0 30px 30px;
+				float:none;
+				text-align:right;
+			}
+			float:left;
+			text-decoration:none;
+			color:white;
+			margin-right:20px;
+			display:block;
+		}
+	}
+}

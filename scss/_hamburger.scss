@@ -1,0 +1,48 @@
+// _hamburger.scss
+$hamburger-bar:15px;
+div#hamburger {
+	@media only screen and (min-width:$breakpoint) {
+		display:none;
+	}
+	width:$topbar-height;
+	height:$topbar-height;
+	cursor:pointer;
+	margin-right:19px;
+	span.layer {
+		position: absolute;
+		right: 25px;
+		border-top: 7px solid white;
+		width: 50px;
+		transition: 0.55s;
+	}
+
+	span.menu-top {
+		top: $hamburger-bar;
+	}
+
+	span.menu-middle {
+		top: $hamburger-bar * 2;
+	}
+
+	span.menu-bottom {
+		top: $hamburger-bar * 3;
+	}
+
+	span.menu-top-click {
+		backface-visibility: hidden;
+		top: 30px;
+		transform: rotate(40deg);
+		transition: 0.55s 0.5s;
+	}
+
+	span.menu-middle-click {
+		opacity: 0;
+	}
+
+	span.menu-bottom-click {
+		backface-visibility: hidden;
+		top: 30px;
+		transform: rotate(-40deg);
+		transition: 0.55s 0.5s;
+	}
+}

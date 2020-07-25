@@ -8,13 +8,9 @@ function collapseMobileNavMenu() {
     }
 }
 function toggleMenu() {
-    var navMenu = document.getElementById("nav-links");
-    if (navMenu.style.width = "200px") {
-        navMenu.style.width = "200px";
-    }
-    else {
-        collapseMobileNavMenu();
-    }
+    document.getElementsByClassName('menu-top')[0].classList.toggle('menu-top-click');
+    document.getElementsByClassName('menu-middle')[0].classList.toggle('menu-middle-click');
+    document.getElementsByClassName('menu-bottom')[0].classList.toggle('menu-bottom-click');
 }
 function changePage(divname) {
     clearAll();

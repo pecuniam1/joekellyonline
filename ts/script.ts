@@ -19,17 +19,26 @@ function collapseMobileNavMenu() : void {
 		navMenu.style.width = "auto";
 	}
 }
+
+
+function toggleMenu() {
+	document.getElementsByClassName('menu-top')[0].classList.toggle('menu-top-click');
+	document.getElementsByClassName('menu-middle')[0].classList.toggle('menu-middle-click');
+	document.getElementsByClassName('menu-bottom')[0].classList.toggle('menu-bottom-click');
+}
+
+
 /**
  * Toggles the mobile menu.
  */
-function toggleMenu() : void {
-	let navMenu = document.getElementById("nav-links");
-	if (navMenu.style.width = "200px") {
-		navMenu.style.width = "200px";
-	} else {
-		collapseMobileNavMenu();
-	}
-}
+// function toggleMenu() : void {
+// 	let navMenu = document.getElementById("nav-links");
+// 	if (navMenu.style.width = "200px") {
+// 		navMenu.style.width = "200px";
+// 	} else {
+// 		collapseMobileNavMenu();
+// 	}
+// }
 /**
  * Changes the page base on whatever div id is passed.
  * @param {string} divname - The id of the div.
