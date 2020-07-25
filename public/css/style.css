@@ -9,13 +9,7 @@
   font-family: NotoSans;
 }
 
-body {
-  /************* header **************/
-  /************ content **************/
-  /************** footer **************/
-}
-
-body video {
+video {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -24,7 +18,28 @@ body video {
   z-index: -1000;
 }
 
-body header {
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 30px);
+  height: 33px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+footer div {
+  float: left;
+}
+
+footer img {
+  float: right;
+  height: 32px;
+  margin-right: 29px;
+}
+
+header {
   height: 59px;
   height: 59px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -32,32 +47,34 @@ body header {
   font-size: 1.2rem;
 }
 
-body header img {
+header img {
   margin-left: 15px;
   float: left;
 }
 
-body header div {
+header div {
   float: right;
 }
 
-body header div div {
+header div div#nav-links {
   margin-top: 12px;
 }
 
 @media only screen and (max-width: 700px) {
-  body header div div {
-    background-color: rgba(0, 0, 0, 0.4);
+  header div div#nav-links {
+    background-color: rgba(0, 0, 0, 0.9);
     float: left;
     position: fixed;
     top: 64px;
     right: 0;
     margin-top: 0;
     width: 0px;
+    -webkit-transition: width 2s;
+    transition: width 2s;
   }
 }
 
-body header div div a {
+header div div#nav-links a {
   float: left;
   text-decoration: none;
   color: white;
@@ -66,12 +83,14 @@ body header div div a {
 }
 
 @media only screen and (max-width: 700px) {
-  body header div div a {
-    padding: 30px;
+  header div div#nav-links a {
+    padding: 30px 0 30px 30px;
+    float: none;
+    text-align: right;
   }
 }
 
-body header div a#hamburger {
+header div a#hamburger {
   text-decoration: none;
   color: white;
   margin-right: 20px;
@@ -79,26 +98,61 @@ body header div a#hamburger {
 }
 
 @media only screen and (min-width: 700px) {
-  body header div a#hamburger {
+  header div a#hamburger {
     display: none;
   }
 }
 
-body div#content div.content-div {
+div#resume-div {
+  width: 500px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+  div#resume-div {
+    width: 90vw;
+  }
+}
+
+div#content div.content-div {
   display: none;
 }
 
-body div#content div#home-div {
+div#about-div {
+  width: 80vw;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px auto;
+  border-radius: 3px;
+}
+
+div#about-div h3 {
+  margin-bottom: 20px;
+}
+
+div#about-div p:not(:last-child) {
+  margin-bottom: 23px;
+}
+
+@media only screen and (max-width: 700px) {
+  div#about-div {
+    width: 90vw;
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+
+div#home-div {
   width: 80vw;
   margin: 32px auto;
 }
 
-body div#content div#home-div h2 {
+div#home-div h2 {
   color: white;
   text-align: center;
 }
 
-body div#content div#home-div div.logos {
+div#home-div div.logos {
   margin: 12px 0 48px;
   padding: 24px;
   border-radius: 3px;
@@ -113,65 +167,9 @@ body div#content div#home-div div.logos {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-body div#content div#home-div div.logos img {
+div#home-div div.logos img {
   padding: 12px;
   height: 60px;
   float: left;
-}
-
-body div#content div#resume-div {
-  width: 500px;
-  margin: 0 auto;
-}
-
-@media only screen and (max-width: 700px) {
-  body div#content div#resume-div {
-    width: 90vw;
-  }
-}
-
-body div#content div#about-div {
-  width: 80vw;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 20px auto;
-  border-radius: 3px;
-}
-
-body div#content div#about-div h3 {
-  margin-bottom: 20px;
-}
-
-body div#content div#about-div p:not(:last-child) {
-  margin-bottom: 23px;
-}
-
-@media only screen and (max-width: 700px) {
-  body div#content div#about-div {
-    width: 90vw;
-    margin-top: 0;
-    border-radius: 0;
-  }
-}
-
-body footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 30px);
-  height: 33px;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-}
-
-body footer div {
-  float: left;
-}
-
-body footer img {
-  float: right;
-  height: 32px;
-  margin-right: 29px;
 }
 /*# sourceMappingURL=style.css.map */

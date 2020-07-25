@@ -11,14 +11,13 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<script src="js/script.js"></script>
-	<!-- <script src="https://kit.fontawesome.com/0f586da1fb.js" crossorigin="anonymous"></script> -->
 </head>
 <body onload="changePage('home-div')"><!-- so that the home-div displays on load -->
 	<video autoplay muted loop id="video-background">
 		<source src="video/city.mp4" type="video/mp4">
 	</video>
 	<!-- desktop header -->
-	<header>
+	<header id="header">
 		<img src="images/name.svg"></img>
 		<div>
 			<div id="nav-links">
@@ -60,6 +59,7 @@
 			</div>
 		</div>
 		<!----------resume-div ----------->
+		<!----- TODO resume does not load on mobile because of flash? ------>
 		<div id="resume-div" class="content-div">
 			<embed src="resume.pdf" width="500" height="700" alt="pdf"
 				pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">

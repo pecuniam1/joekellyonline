@@ -1,0 +1,8 @@
+// _resume.scss
+div#resume-div {
+	width:500px;
+	margin:0 auto;
+	@media only screen and (max-width: $breakpoint) {
+		width: 90vw;
+	}
+}

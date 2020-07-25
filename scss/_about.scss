@@ -1,0 +1,19 @@
+// _about.scss
+div#about-div {
+	width:80vw;
+	padding:30px;
+	background-color:rgba(255,255,255,0.8);
+	margin:20px auto;
+	border-radius: $div-radius;
+	h3 {
+		margin-bottom:20px;
+	}
+	p:not(:last-child) {
+		margin-bottom:23px;
+	}
+	@media only screen and (max-width: $breakpoint) {
+		width: 90vw;
+		margin-top:0;
+		border-radius:0;
+	}
+}

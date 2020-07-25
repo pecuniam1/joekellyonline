@@ -9,8 +9,8 @@ function collapseMobileNavMenu() {
 }
 function toggleMenu() {
     var navMenu = document.getElementById("nav-links");
-    if (navMenu.style.width != "250px") {
-        navMenu.style.width = "250px";
+    if (navMenu.style.width = "200px") {
+        navMenu.style.width = "200px";
     }
     else {
         collapseMobileNavMenu();

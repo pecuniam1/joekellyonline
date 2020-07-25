@@ -1,0 +1,19 @@
+// _footer.scss
+footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:calc(100% - 30px);
+	height:33px;
+	padding:15px;
+	background-color:rgba(0,0,0,0.9);
+	color:white;
+	div {
+		float:left;
+	}
+	img {
+		float:right;
+		height:32px;
+		margin-right:29px;
+	}
+}
