@@ -1,6 +1,13 @@
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://www.joekellyonline.com/$1 [R,L]
-<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|svg|png)$">
+
+# One year for images
+<filesMatch ".(ico|pdf|flv|jpg|jpeg|gif|swf|svg|png)$">
     Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+
+# One month for css and js
+<filesMatch ".(css|js)$">
+    Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
