@@ -4,7 +4,6 @@ const staticAssets = [
 '../index.html',
 '../css/style.css',
 '../docs/resume.pdf',
-'../fonts/NotoSansJP-Regular.otf',
 '../js/script.js'
 ];
 self.addEventListener('install', async e => {
