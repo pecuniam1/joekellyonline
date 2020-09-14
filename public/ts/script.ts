@@ -67,7 +67,7 @@ function clearAll() : void {
 async function registerSW() {
 	if ('serviceWorker' in navigator) {
 		try {
-			await navigator.serviceWorker.register('./service-worker.js');
+			await navigator.serviceWorker.register('./js/service-worker.js');
 		} catch (e) {
 			console.log(`ServiceWorker Regsitration failed.`);
 		}
