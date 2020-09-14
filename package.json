@@ -1,0 +1,19 @@
+{
+  "name": "joekellyonline",
+  "version": "1.0.0",
+  "description": "This is the personal web page repository for Joe Kelly. The website url is located at [joekellyonline.com](https://www.joekellyonline.com)",
+  "main": "script.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pecuniam1/joekellyonline.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pecuniam1/joekellyonline/issues"
+  },
+  "homepage": "https://github.com/pecuniam1/joekellyonline#readme"
+}

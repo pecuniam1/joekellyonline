@@ -13,7 +13,6 @@
 	<link rel="manifest" href="/site.webmanifest">
 	<meta name="author" content="Joe Kelly"></meta>
 	<meta name="theme-color" content="#ffffff"></meta>
-	<script async src="js/script.js"></script>
 </head>
 <body onload="changePage('home')"><!-- so that the home-div displays on load -->
 	<video autoplay muted loop id="video-background" poster="images/city.jpg">
@@ -93,5 +92,13 @@
 			<img src="images/linkedin.svg" alt="github logo">
 		</a>
 	</footer>
+	<script async src="js/script.js"></script>
+	<script>
+		if('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			})
+		}
+	</script>
 </body>
 </html>
