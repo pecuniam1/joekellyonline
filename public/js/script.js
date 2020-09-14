@@ -1,5 +1,17 @@
-var BREAKPOINT = 700;
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const BREAKPOINT = 700;
 window.addEventListener('resize', windowResize);
+window.addEventListener('load', () => {
+    registerSW();
+});
 function windowResize() {
     resetHamburger();
 }
@@ -17,14 +29,26 @@ function resetHamburger() {
 }
 function changePage(divname) {
     clearAll();
-    var div = document.getElementById(divname);
+    let div = document.getElementById(divname);
     div.style.display = "block";
     resetHamburger();
 }
 function clearAll() {
-    var all = document.getElementsByClassName("content");
-    for (var i = 0; i < all.length; i++) {
+    let all = document.getElementsByClassName("content");
+    for (let i = 0; i < all.length; i++) {
         all[i].style.display = "none";
     }
+}
+function registerSW() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if ('serviceWorker' in navigator) {
+            try {
+                yield navigator.serviceWorker.register('./sw.js');
+            }
+            catch (e) {
+                console.log(`ServiceWorker Regsitration failed.`);
+            }
+        }
+    });
 }
 //# sourceMappingURL=script.js.map

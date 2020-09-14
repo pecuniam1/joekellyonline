@@ -4,6 +4,9 @@ const BREAKPOINT: number = 700;
  * event listener to hide mobile nav menu in case of resize.
  */
 window.addEventListener('resize', windowResize);
+window.addEventListener('load', () => {
+registerSW();
+});
 
 function windowResize() {
 	resetHamburger();
@@ -55,5 +58,15 @@ function clearAll() : void {
 	let all = document.getElementsByClassName("content") as HTMLCollectionOf<HTMLElement>;
 	for (let i=0; i<all.length; i++) {
 		all[i].style.display = "none";
+	}
+}
+
+async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+			await navigator.serviceWorker.register('./sw.js');
+		} catch (e) {
+			console.log(`ServiceWorker Regsitration failed.`);
+		}
 	}
 }
