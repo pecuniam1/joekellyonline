@@ -36,6 +36,10 @@ footer div {
   float: left;
 }
 
+footer div p {
+  font-size: 1.5rem;
+}
+
 footer img {
   float: right;
   height: 32px;
