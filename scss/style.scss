@@ -2,10 +2,16 @@ $breakpoint:700px;
 $topbar-height:59px;
 $topbar-color:rgba(0,0,0,0.4);
 $div-radius:3px;
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v9/o-0IIpQlx3QUlC5A4PNr5TRA.woff2) format('woff2');
 * {
 	margin:0;
 	padding:0;
-	font-family: 'Noto Sans JP', sans-serif;
+	font-family: 'Noto Sans', sans-serif;
 }
 @import 'video';
 @import 'footer';
