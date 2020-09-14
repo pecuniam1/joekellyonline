@@ -7,7 +7,7 @@ RewriteRule ^(.*)$ https://www.joekellyonline.com/$1 [R,L]
     Header set Cache-Control "max-age=31536000, public"
 </filesMatch>
 
-# One month for css and js
-<filesMatch ".(css|js)$">
+# One month for css, js, pdf, and otf
+<filesMatch ".(css|js|pdf|otf)$">
     Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
