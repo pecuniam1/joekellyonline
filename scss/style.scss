@@ -2,14 +2,10 @@ $breakpoint:700px;
 $topbar-height:59px;
 $topbar-color:rgba(0,0,0,0.4);
 $div-radius:3px;
-@font-face {
-	font-family:NotoSans;
-	src:url(../fonts/NotoSansJP-Regular.otf);
-}
 * {
 	margin:0;
 	padding:0;
-	font-family:NotoSans;
+	font-family: 'Noto Sans JP', sans-serif;
 }
 @import 'video';
 @import 'footer';
