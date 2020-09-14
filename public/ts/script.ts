@@ -61,10 +61,13 @@ function clearAll() : void {
 	}
 }
 
+/**
+ * Register the service worker
+ */
 async function registerSW() {
 	if ('serviceWorker' in navigator) {
 		try {
-			await navigator.serviceWorker.register('./sw.js');
+			await navigator.serviceWorker.register('./service-worker.js');
 		} catch (e) {
 			console.log(`ServiceWorker Regsitration failed.`);
 		}

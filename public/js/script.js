@@ -43,7 +43,7 @@ function registerSW() {
     return __awaiter(this, void 0, void 0, function* () {
         if ('serviceWorker' in navigator) {
             try {
-                yield navigator.serviceWorker.register('./sw.js');
+                yield navigator.serviceWorker.register('./service-worker.js');
             }
             catch (e) {
                 console.log(`ServiceWorker Regsitration failed.`);
