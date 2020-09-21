@@ -112,7 +112,7 @@ article#home h2 {
   text-align: center;
 }
 
-article#home div.logos {
+article#home div.logos, article#home div.contact {
   margin: 12px 0 48px;
   padding: 24px;
   border-radius: 3px;
@@ -124,6 +124,11 @@ article#home div.logos {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+article#home div.logos {
+  width: auto;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -131,6 +136,18 @@ article#home div.logos img {
   padding: 12px;
   height: 60px;
   float: left;
+}
+
+article#home div.contact {
+  width: 30%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1080px) {
+  article#home div.contact {
+    width: 80%;
+    text-align: center;
+  }
 }
 
 div#hamburger {
