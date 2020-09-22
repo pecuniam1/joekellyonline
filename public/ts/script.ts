@@ -62,14 +62,13 @@ function clearAll(): void {
 }
 
 function postForm(): void {
-	console.log("working");
-	let data = {
+	let stuff = {
 		"name": document.getElementById("name") as HTMLInputElement,
 		"phone": document.getElementById("phone") as HTMLInputElement,
 		"email": document.getElementById("email") as HTMLInputElement,
 		"subject": document.getElementById("subject") as HTMLInputElement,
 	};
-	postData('https://api.joekellyonline.com/contact', data)
+	postData('https://api.joekellyonline.com/contact', stuff)
 		.then(data => { console.log(data); })
 }
 
