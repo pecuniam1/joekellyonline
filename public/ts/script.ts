@@ -67,6 +67,7 @@ function postForm(): void {
 
 	fetch(url, {
 		method: 'POST', // or 'PUT'
+		mode: 'no-cors',
 		headers: {
 			'Content-Type': 'application/json',
 		},
