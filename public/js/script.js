@@ -32,7 +32,13 @@ function clearAll() {
 }
 function postForm() {
     console.log("working");
-    postData('https://api.joekellyonline.com/contact', { "something": 42 })
+    let data = {
+        "name": document.getElementById("name"),
+        "phone": document.getElementById("phone"),
+        "email": document.getElementById("email"),
+        "subject": document.getElementById("subject"),
+    };
+    postData('https://api.joekellyonline.com/contact', data)
         .then(data => { console.log(data); });
 }
 async function postData(url = '', data = {}) {
