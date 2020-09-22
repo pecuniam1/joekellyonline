@@ -36,28 +36,26 @@ function clearAll() {
     }
 }
 function postForm() {
+	const formData = new FormData();
     let url = "https://api.joekellyonline.com/contact";
-    let stuff = {
-        "name": document.getElementById("name").value,
-        "phone": document.getElementById("phone").value,
-        "email": document.getElementById("email").value,
-        "subject": document.getElementById("subject").value
-    };
+    // let stuff = {
+    //     "name": document.getElementById("name").value,
+    //     "phone": document.getElementById("phone").value,
+    //     "email": document.getElementById("email").value,
+    //     "subject": document.getElementById("subject").value
+	// };
+	formData.append("name", document.getElementById("name").value);
+	formData.append("phone", document.getElementById("phone").value);
+	formData.append("email", document.getElementById("email").value);
+	formData.append("subject", document.getElementById("subject").value);
     fetch(url, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(stuff),
+        body: formData,
     })
         .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-    })
-        .catch((error) => {
-        console.error('Error:', error);
-    });
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', JSON.stringify(response)));
 }
 async function registerSW() {
     if ('serviceWorker' in navigator) {
