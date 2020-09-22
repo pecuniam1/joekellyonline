@@ -42,16 +42,8 @@ function postForm() {
         .then(data => { console.log(data); });
 }
 async function postData(url = '', data = {}) {
-    const response = await fetch(url, {
+    fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
     }).then(function (response) {
         return response.json();
