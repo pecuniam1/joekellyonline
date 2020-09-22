@@ -40,6 +40,7 @@ function postForm() {
     };
     fetch(url, {
         method: 'POST',
+        mode: 'no-cors',
         body: JSON.stringify(stuff)
     }).then(function (response) {
         return response.json();
