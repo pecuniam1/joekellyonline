@@ -45,16 +45,17 @@ function postForm() {
     };
     fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        referrerPolicy: 'unsafe-url',
-        body: JSON.stringify(stuff)
-    }).then(function (response) {
-        console.log(`Request success: `, response);
-    }).catch(function (error) {
-        console.log(`Request failure: `, error);
+        body: JSON.stringify(stuff),
+    })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+    })
+        .catch((error) => {
+        console.error('Error:', error);
     });
 }
 async function registerSW() {

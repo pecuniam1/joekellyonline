@@ -64,23 +64,38 @@ function postForm(): void {
 		"email": (document.getElementById("email") as HTMLInputElement).value,
 		"subject": (document.getElementById("subject") as HTMLInputElement).value
 	};
+
 	fetch(url, {
-		method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		mode: 'no-cors', // no-cors, *cors, same-origin
-		// cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-		// credentials: 'same-origin', // include, *same-origin, omit
+		method: 'POST', // or 'PUT'
 		headers: {
-			'Content-Type': 'application/json'
-			// 'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Type': 'application/json',
 		},
-		// redirect: 'follow', // manual, *follow, error
-		referrerPolicy: 'unsafe-url', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-		body: JSON.stringify(stuff) // body data type must match "Content-Type" header
-	}).then(function(response) {
-		console.log(`Request success: `, response);
-	}).catch(function(error) {
-		console.log(`Request failure: `, error);
-	});
+		body: JSON.stringify(stuff),
+	})
+		.then(response => response.json())
+		.then(data => {
+			console.log('Success:', data);
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
+	// fetch(url, {
+	// 	method: 'POST', // *GET, POST, PUT, DELETE, etc.
+	// 	mode: 'no-cors', // no-cors, *cors, same-origin
+	// 	// cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+	// 	// credentials: 'same-origin', // include, *same-origin, omit
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 		// 'Content-Type': 'application/x-www-form-urlencoded',
+	// 	},
+	// 	// redirect: 'follow', // manual, *follow, error
+	// 	referrerPolicy: 'unsafe-url', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+	// 	body: JSON.stringify(stuff) // body data type must match "Content-Type" header
+	// }).then(function(response) {
+	// 	console.log(`Request success: `, response);
+	// }).catch(function(error) {
+	// 	console.log(`Request failure: `, error);
+	// });
 }
 
 /**
