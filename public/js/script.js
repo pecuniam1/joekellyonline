@@ -38,6 +38,8 @@ function postForm() {
         "subject": document.getElementById("subject").value
     };
     console.log('stuff :>> ', stuff);
+    postData('https://api.joekellyonline.com/contact', stuff)
+        .then(data => { console.log(data); });
 }
 async function postData(url = '', data = {}) {
     const response = await fetch(url, {
