@@ -68,8 +68,9 @@ function postForm(): void {
 		"email": (document.getElementById("email") as HTMLInputElement).value,
 		"subject": (document.getElementById("subject") as HTMLInputElement).value
 	};
-	postData('https://api.joekellyonline.com/contact', stuff)
-		.then(data => { console.log(data); })
+	console.log('stuff :>> ', stuff);
+	// postData('https://api.joekellyonline.com/contact', stuff)
+	// 	.then(data => { console.log(data); })
 }
 
 async function postData(url = '', data = {}) {
