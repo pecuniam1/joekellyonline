@@ -44,7 +44,7 @@ function postForm() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(stuff)
+        body: JSON.stringify({ "number": 32 })
     }).then(function (response) {
         console.log(`Request success: `, response);
     }).catch(function (error) {

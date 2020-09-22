@@ -80,7 +80,8 @@ function postForm(): void {
 		},
 		// redirect: 'follow', // manual, *follow, error
 		// referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-		body: JSON.stringify(stuff) // body data type must match "Content-Type" header
+		// body: JSON.stringify(stuff) // body data type must match "Content-Type" header
+		body: JSON.stringify({ "number": 32 }) // body data type must match "Content-Type" header
 	}).then(function(response) {
 		console.log(`Request success: `, response);
 	}).catch(function(error) {
