@@ -1,9 +1,24 @@
 const BREAKPOINT = 700;
+const myForm = document.getElementById('contact_form');
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
     registerSW();
     showNavigationMenu();
     changePage("home");
+});
+myForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("https://api.joekellyonline.contact", {
+        method: 'POST',
+        body: formData
+    }).then(function (response) {
+        response.json();
+    }).then(function (text) {
+        console.log(text);
+    }).catch(function (error) {
+        console.error('error :>> ', error);
+    });
 });
 function showNavigationMenu() {
     document.getElementById("nav").style.display = "block";
@@ -34,31 +49,6 @@ function clearAll() {
     for (let i = 0; i < all.length; i++) {
         all[i].style.display = "none";
     }
-}
-function postForm() {
-    let url = "https://api.joekellyonline.com/contact";
-    const formData = new FormData();
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let subject = document.getElementById("subject").value;
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("email", email);
-    formData.append("subject", subject);
-    console.log('formData :>> ', formData);
-    fetch(url, {
-        method: 'POST',
-        mode: "no-cors",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-    })
-        .catch((error) => {
-        console.error('Error:', error);
-    });
 }
 async function registerSW() {
     if ('serviceWorker' in navigator) {

@@ -1,5 +1,6 @@
 // why does full screen reload disappear home and resume?
 const BREAKPOINT: number = 700;
+const myForm = document.getElementById('contact_form');
 /**
  * event listener to hide mobile nav menu in case of resize.
  */
@@ -9,6 +10,23 @@ window.addEventListener('load', () => {
 	showNavigationMenu();
 	changePage("home");
 });
+myForm.addEventListener('submit', function (event) {
+	event.preventDefault();
+
+	const formData = new FormData(this as HTMLFormElement);
+
+	fetch("https://api.joekellyonline.contact", {
+		method: 'POST',
+		body: formData
+	}).then(function (response) {
+		response.json();
+	}).then(function (text) {
+		console.log(text);
+	}).catch(function (error) {
+		console.error('error :>> ', error);
+	})
+});
+
 
 function showNavigationMenu() {
 	document.getElementById("nav").style.display = "block";
@@ -56,32 +74,26 @@ function clearAll(): void {
 	}
 }
 
-function postForm(): void {
-	let url = "https://api.joekellyonline.com/contact";
-	const formData = new FormData();
-	let name = (document.getElementById("name") as HTMLInputElement).value;
-	let phone = (document.getElementById("phone") as HTMLInputElement).value;
-	let email = (document.getElementById("email") as HTMLInputElement).value;
-	let subject = (document.getElementById("subject") as HTMLInputElement).value;
+// function postForm(): void {
+// 	let url = "https://api.joekellyonline.com/contact";
 
+// 	let name = (document.getElementById("name") as HTMLInputElement).value;
+// 	let phone = (document.getElementById("phone") as HTMLInputElement).value;
+// 	let email = (document.getElementById("email") as HTMLInputElement).value;
+// 	let subject = (document.getElementById("subject") as HTMLInputElement).value;
 
-	formData.append("name", name);
-	formData.append("phone", phone);
-	formData.append("email", email);
-	formData.append("subject", subject);
-	console.log('formData :>> ', formData);
-	fetch(url, {
-		method: 'POST', // or 'PUT',
-		mode: "no-cors",
-		body: formData
-	})
-		.then(response => response.json())
-		.then(data => {
-			console.log('Success:', data);
-		})
-		.catch((error) => {
-			console.error('Error:', error);
-		});
+// 	fetch(url, {
+// 		method: 'POST', // or 'PUT',
+// 		mode: "no-cors",
+// 		body: formData
+// 	})
+// 		.then(response => response.json())
+// 		.then(data => {
+// 			console.log('Success:', data);
+// 		})
+// 		.catch((error) => {
+// 			console.error('Error:', error);
+// 		});
 	// fetch(url, {
 	// 	method: 'POST', // *GET, POST, PUT, DELETE, etc.
 	// 	mode: 'no-cors', // no-cors, *cors, same-origin
@@ -99,7 +111,7 @@ function postForm(): void {
 	// }).catch(function(error) {
 	// 	console.log(`Request failure: `, error);
 	// });
-}
+// }
 
 /**
  * Register the service worker
