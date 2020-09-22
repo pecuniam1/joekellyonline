@@ -6,23 +6,18 @@ const BREAKPOINT: number = 700;
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
 	registerSW();
+	showNavigationMenu();
+	changePage("home");
 });
+
+function showNavigationMenu() {
+	document.getElementById("nav").style.display = "block";
+}
 
 function windowResize() {
 	resetHamburger();
-	// collapseMobileNavMenu();
 }
-/**
- * Collpases the mobile nav menu.
- * @param {HTMLElement} navMenu - The nav menu element with id nav-links.
- */
-// function collapseMobileNavMenu() : void {
-// 	let navMenu = document.getElementById("nav-links");
-// 	navMenu.style.width = "0px";
-// 	if (window.innerWidth >= BREAKPOINT) {
-// 		navMenu.style.width = "auto";
-// 	}
-// }
+
 /**
  * Toggles the menu on and off. Also toggles the menu pane.
  */
@@ -81,7 +76,7 @@ function postForm(): void {
 		// redirect: 'follow', // manual, *follow, error
 		// referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 		// body: JSON.stringify(stuff) // body data type must match "Content-Type" header
-		body: JSON.stringify({ "number": 32 }) // body data type must match "Content-Type" header
+		body: JSON.stringify(stuff) // body data type must match "Content-Type" header
 	}).then(function(response) {
 		console.log(`Request success: `, response);
 	}).catch(function(error) {

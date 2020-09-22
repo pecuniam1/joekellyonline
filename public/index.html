@@ -20,7 +20,7 @@
 	</meta>
 </head>
 
-<body onload="changePage('home')">
+<body>
 	<!-- so that the home-div displays on load -->
 	<video autoplay muted loop id="video-background" poster="images/city.jpg">
 		<source src="video/city.mp4" type="video/mp4">
@@ -28,7 +28,7 @@
 	<!-- desktop header -->
 	<header id="header">
 		<img src="images/name.svg" alt="Joe Kelly logo"></img>
-		<nav>
+		<nav id="nav">
 			<div id="nav-links">
 				<!-- must be bumper here for mobile if someone scrolls down -->
 				<a href="javascript:void(0)" onclick="changePage('home')">Home</a>
@@ -100,22 +100,20 @@
 				love to cook. I grew up learning about Italian food because my mother is Italian.</p>
 		</article>
 		<article id="contact" class="content">
-			<div class="container">
-				<form>
-					<label for="name">Your Name</label>
-					<input type="text" id="name" name="name" placeholder="Your name.." required>
+			<form>
+				<label for="name">Your Name (Required)</label>
+				<input type="text" id="name" name="name" placeholder="Enter your name..." required>
 
-					<label for="phone">Your Phone</label>
-					<input type="tel" id="phone" name="phone">
-					<label for="email">Email Address</label>
+				<label for="phone">Your Phone</label>
+				<input type="tel" id="phone" name="phone" placeholder="Enter your phone number ...">
+				<label for="email">Email Address</label>
 
-					<input type="text" id="email" name="email" placeholder="Your email..">
-					<label for="subject">Subject</label>
-					<textarea id="subject" name="subject" placeholder="Write something.."
-						style="height:200px"></textarea>
-					<button type="button" onclick="postForm()">Click here</button>
-				</form>
-			</div>
+				<input type="text" id="email" name="email" placeholder="Enter your email...">
+				<label for="subject">What&apos;s Up?</label>
+				<textarea id="subject" name="subject" placeholder="Tell me what's up ..."
+					style="height:100px"></textarea>
+				<button type="button" onclick="postForm()">Click here to submit</button>
+			</form>
 		</article>
 	</div>
 	<!------- sticky footer ---------->

@@ -2,7 +2,12 @@ const BREAKPOINT = 700;
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
     registerSW();
+    showNavigationMenu();
+    changePage("home");
 });
+function showNavigationMenu() {
+    document.getElementById("nav").style.display = "block";
+}
 function windowResize() {
     resetHamburger();
 }
@@ -44,7 +49,7 @@ function postForm() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ "number": 32 })
+        body: JSON.stringify(stuff)
     }).then(function (response) {
         console.log(`Request success: `, response);
     }).catch(function (error) {
