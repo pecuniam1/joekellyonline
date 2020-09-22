@@ -59,17 +59,16 @@ function clearAll(): void {
 function postForm(): void {
 	let url = "https://api.joekellyonline.com/contact";
 	const formData = new FormData();
-	// let stuff = {
-	// 	"name": (document.getElementById("name") as HTMLInputElement).value,
-	// 	"phone": (document.getElementById("phone") as HTMLInputElement).value,
-	// 	"email": (document.getElementById("email") as HTMLInputElement).value,
-	// 	"subject": (document.getElementById("subject") as HTMLInputElement).value
-	// };
-	
-	formData.append("name", (document.getElementById("name") as HTMLInputElement).value),
-	formData.append("phone", (document.getElementById("phone") as HTMLInputElement).value),
-	formData.append("email", (document.getElementById("email") as HTMLInputElement).value),
-	formData.append("subject", (document.getElementById("subject") as HTMLInputElement).value)
+	let name = (document.getElementById("name") as HTMLInputElement).value;
+	let phone = (document.getElementById("phone") as HTMLInputElement).value;
+	let email = (document.getElementById("email") as HTMLInputElement).value;
+	let subject = (document.getElementById("subject") as HTMLInputElement).value;
+
+
+	formData.append("name", name);
+	formData.append("phone", phone);
+	formData.append("email", email);
+	formData.append("subject", subject);
 	console.log('formData :>> ', formData);
 	fetch(url, {
 		method: 'POST', // or 'PUT',

@@ -38,10 +38,14 @@ function clearAll() {
 function postForm() {
     let url = "https://api.joekellyonline.com/contact";
     const formData = new FormData();
-    formData.append("name", document.getElementById("name").value),
-        formData.append("phone", document.getElementById("phone").value),
-        formData.append("email", document.getElementById("email").value),
-        formData.append("subject", document.getElementById("subject").value);
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", email);
+    formData.append("subject", subject);
     console.log('formData :>> ', formData);
     fetch(url, {
         method: 'POST',
