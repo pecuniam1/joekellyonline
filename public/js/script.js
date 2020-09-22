@@ -1,24 +1,9 @@
 const BREAKPOINT = 700;
-const myForm = document.getElementById('contact_form');
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
     registerSW();
     showNavigationMenu();
     changePage("home");
-});
-myForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    fetch("https://api.joekellyonline.contact", {
-        method: 'POST',
-        body: formData
-    }).then(function (response) {
-        response.json();
-    }).then(function (text) {
-        console.log(text);
-    }).catch(function (error) {
-        console.error('error :>> ', error);
-    });
 });
 function showNavigationMenu() {
     document.getElementById("nav").style.display = "block";
@@ -49,6 +34,33 @@ function clearAll() {
     for (let i = 0; i < all.length; i++) {
         all[i].style.display = "none";
     }
+}
+function postForm() {
+    let url = "https://api.joekellyonline.com/contact";
+    let formData = {
+        "name": document.getElementById("name").value,
+        "phone": document.getElementById("phone").value,
+        "email": document.getElementById("email").value,
+        "subject": document.getElementById("subject").value
+    };
+    fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        referrerPolicy: 'unsafe-url',
+        body: JSON.stringify(formData)
+    }).then(function (response) {
+        console.log(`Request success: `, response);
+        confirmSend();
+    }).catch(function (error) {
+        console.log(`Request failure: `, error);
+        confirmSend();
+    });
+}
+function confirmSend() {
+    alert("Contact has been made");
 }
 async function registerSW() {
     if ('serviceWorker' in navigator) {
