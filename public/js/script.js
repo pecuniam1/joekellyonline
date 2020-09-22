@@ -31,14 +31,13 @@ function clearAll() {
     }
 }
 function postForm() {
-    console.log("working");
-    let data = {
+    let stuff = {
         "name": document.getElementById("name"),
         "phone": document.getElementById("phone"),
         "email": document.getElementById("email"),
         "subject": document.getElementById("subject"),
     };
-    postData('https://api.joekellyonline.com/contact', data)
+    postData('https://api.joekellyonline.com/contact', stuff)
         .then(data => { console.log(data); });
 }
 async function postData(url = '', data = {}) {
