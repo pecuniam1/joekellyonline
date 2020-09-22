@@ -41,11 +41,14 @@ function postForm() {
     fetch(url, {
         method: 'POST',
         mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(stuff)
     }).then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log('data.html_url :>> ', data.html_url);
+        console.log(`Request success: `, response);
+    }).catch(function (error) {
+        console.log(`Request failure: `, error);
     });
 }
 async function registerSW() {
