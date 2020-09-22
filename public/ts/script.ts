@@ -58,20 +58,25 @@ function clearAll(): void {
 
 function postForm(): void {
 	let url = "https://api.joekellyonline.com/contact";
-	let stuff = {
-		"name": (document.getElementById("name") as HTMLInputElement).value,
-		"phone": (document.getElementById("phone") as HTMLInputElement).value,
-		"email": (document.getElementById("email") as HTMLInputElement).value,
-		"subject": (document.getElementById("subject") as HTMLInputElement).value
-	};
-
+	const formData = new FormData();
+	// let stuff = {
+	// 	"name": (document.getElementById("name") as HTMLInputElement).value,
+	// 	"phone": (document.getElementById("phone") as HTMLInputElement).value,
+	// 	"email": (document.getElementById("email") as HTMLInputElement).value,
+	// 	"subject": (document.getElementById("subject") as HTMLInputElement).value
+	// };
+	
+	formData.append("name", (document.getElementById("name") as HTMLInputElement).value),
+	formData.append("phone", (document.getElementById("phone") as HTMLInputElement).value),
+	formData.append("email", (document.getElementById("email") as HTMLInputElement).value),
+	formData.append("subject", (document.getElementById("subject") as HTMLInputElement).value)
 	fetch(url, {
 		method: 'POST', // or 'PUT'
 		mode: 'no-cors',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(stuff),
+		body: formData
 	})
 		.then(response => response.json())
 		.then(data => {
