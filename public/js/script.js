@@ -53,8 +53,11 @@ async function postData(url = '', data = {}) {
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log('data.html_url :>> ', data.html_url);
     });
-    return response.json();
 }
 async function registerSW() {
     if ('serviceWorker' in navigator) {
