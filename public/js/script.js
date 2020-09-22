@@ -31,20 +31,16 @@ function clearAll() {
     }
 }
 function postForm() {
+    let url = "https://api.joekellyonline.com/contact";
     let stuff = {
         "name": document.getElementById("name").value,
         "phone": document.getElementById("phone").value,
         "email": document.getElementById("email").value,
         "subject": document.getElementById("subject").value
     };
-    console.log('stuff :>> ', stuff);
-    postData('https://api.joekellyonline.com/contact', stuff)
-        .then(data => { console.log(data); });
-}
-async function postData(url = '', data = {}) {
     fetch(url, {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(stuff)
     }).then(function (response) {
         return response.json();
     }).then(function (data) {
