@@ -37,8 +37,7 @@ function postForm() {
         "email": document.getElementById("email").value,
         "subject": document.getElementById("subject").value
     };
-    postData('https://api.joekellyonline.com/contact', stuff)
-        .then(data => { console.log(data); });
+    console.log('stuff :>> ', stuff);
 }
 async function postData(url = '', data = {}) {
     const response = await fetch(url, {
