@@ -63,10 +63,10 @@ function clearAll(): void {
 
 function postForm(): void {
 	let stuff = {
-		"name": document.getElementById("name") as HTMLInputElement,
-		"phone": document.getElementById("phone") as HTMLInputElement,
-		"email": document.getElementById("email") as HTMLInputElement,
-		"subject": document.getElementById("subject") as HTMLInputElement,
+		"name": (document.getElementById("name") as HTMLInputElement).value,
+		"phone": (document.getElementById("phone") as HTMLInputElement).value,
+		"email": (document.getElementById("email") as HTMLInputElement).value,
+		"subject": (document.getElementById("subject") as HTMLInputElement).value
 	};
 	postData('https://api.joekellyonline.com/contact', stuff)
 		.then(data => { console.log(data); })

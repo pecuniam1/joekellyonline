@@ -32,10 +32,10 @@ function clearAll() {
 }
 function postForm() {
     let stuff = {
-        "name": document.getElementById("name"),
-        "phone": document.getElementById("phone"),
-        "email": document.getElementById("email"),
-        "subject": document.getElementById("subject"),
+        "name": document.getElementById("name").value,
+        "phone": document.getElementById("phone").value,
+        "email": document.getElementById("email").value,
+        "subject": document.getElementById("subject").value
     };
     postData('https://api.joekellyonline.com/contact', stuff)
         .then(data => { console.log(data); });
