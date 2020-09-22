@@ -72,10 +72,6 @@ function postForm(): void {
 	formData.append("subject", (document.getElementById("subject") as HTMLInputElement).value)
 	fetch(url, {
 		method: 'POST', // or 'PUT'
-		mode: 'no-cors',
-		headers: {
-			'Content-Type': 'application/json',
-		},
 		body: formData
 	})
 		.then(response => response.json())
