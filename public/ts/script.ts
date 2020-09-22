@@ -92,6 +92,7 @@ function postForm(): void {
  * This will eventually be a modal confirmation.
  */
 function confirmSend() : void {
+	(<HTMLFormElement>document.getElementById("myForm")).reset();
 	alert("Contact has been made");
 }
 

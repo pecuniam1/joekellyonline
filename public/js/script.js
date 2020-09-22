@@ -60,6 +60,7 @@ function postForm() {
     });
 }
 function confirmSend() {
+    document.getElementById("myForm").reset();
     alert("Contact has been made");
 }
 async function registerSW() {
