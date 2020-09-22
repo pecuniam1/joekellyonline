@@ -70,6 +70,7 @@ function postForm(): void {
 	formData.append("phone", (document.getElementById("phone") as HTMLInputElement).value),
 	formData.append("email", (document.getElementById("email") as HTMLInputElement).value),
 	formData.append("subject", (document.getElementById("subject") as HTMLInputElement).value)
+	console.log('formData :>> ', formData);
 	fetch(url, {
 		method: 'POST', // or 'PUT',
 		mode: "no-cors",

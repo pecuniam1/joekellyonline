@@ -42,12 +42,10 @@ function postForm() {
         formData.append("phone", document.getElementById("phone").value),
         formData.append("email", document.getElementById("email").value),
         formData.append("subject", document.getElementById("subject").value);
+    console.log('formData :>> ', formData);
     fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        mode: "no-cors",
         body: formData
     })
         .then(response => response.json())
