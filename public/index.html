@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Joe Kelly -- Full Stack Developer</title>
-	<meta name="description" content="This is the website for Joe Kelly. I am a full stack web developer based out of the Chicagoland area.">
-	<link rel="preload" href="https://fonts.gstatic.com/s/notosans/v9/o-0IIpQlx3QUlC5A4PNr5TRA.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<meta name="description"
+		content="This is the website for Joe Kelly. I am a full stack web developer based out of the Chicagoland area.">
+	<link rel="preload" href="https://fonts.gstatic.com/s/notosans/v9/o-0IIpQlx3QUlC5A4PNr5TRA.woff2" as="font"
+		type="font/woff2" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<meta name="author" content="Joe Kelly"></meta>
-	<meta name="theme-color" content="#ffffff"></meta>
+	<meta name="author" content="Joe Kelly">
+	</meta>
+	<meta name="theme-color" content="#ffffff">
+	</meta>
 </head>
-<body onload="changePage('home')"><!-- so that the home-div displays on load -->
+
+<body onload="changePage('home')">
+	<!-- so that the home-div displays on load -->
 	<video autoplay muted loop id="video-background" poster="images/city.jpg">
 		<source src="video/city.mp4" type="video/mp4">
 	</video>
@@ -27,6 +34,7 @@
 				<a href="javascript:void(0)" onclick="changePage('home')">Home</a>
 				<a href="javascript:void(0)" onclick="changePage('resume')">Resume</a>
 				<a href="javascript:void(0)" onclick="changePage('about')">About Me</a>
+				<a href="javascript:void(0)" onclick="changePage('contact')">Contact Me</a>
 			</div>
 			<div id="hamburger" onclick="toggleMenu()">
 				<span class="layer menu-top"></span>
@@ -79,11 +87,38 @@
 		<article id="about" class="content">
 			<h2>About Me</h2>
 			<h3>I am a full stack Developer.</h3>
-			<p>My first computer was a PC-compatible Canon manufactured in the late 1980s and I have been in love with computers ever since.</p>
-			<p>I received my Bachelor's Degree (with High Honors) from Lewis University in 2008. My major was Computer Science and my concentration was cyber security. I helped build a computer lab.</p>
-			<p>I'm currently working on my Master's Degree at Lewis University in Computer Science with a concentration in Cyber Security. I am finished with all of my courework and am writing my thesis. My GPA is 3.5</p>
-			<p>I spent several years studying improv, acting, and comedy writing at the Second City Training Center in Chicago, IL. This amazing experience has taught me to listen to other, learn to lead and follow when necessary.</p>
-			<p>I have been either a bartender or cook my entire life. I don't do much bartending anymore, but I still love to cook. I grew up learning about Italian food because my mother is Italian.</p>
+			<p>My first computer was a PC-compatible Canon manufactured in the late 1980s and I have been in love with
+				computers ever since.</p>
+			<p>I received my Bachelor's Degree (with High Honors) from Lewis University in 2008. My major was Computer
+				Science and my concentration was cyber security. I helped build a computer lab.</p>
+			<p>I'm currently working on my Master's Degree at Lewis University in Computer Science with a concentration
+				in Cyber Security. I am finished with all of my courework and am writing my thesis. My GPA is 3.5</p>
+			<p>I spent several years studying improv, acting, and comedy writing at the Second City Training Center in
+				Chicago, IL. This amazing experience has taught me to listen to other, learn to lead and follow when
+				necessary.</p>
+			<p>I have been either a bartender or cook my entire life. I don't do much bartending anymore, but I still
+				love to cook. I grew up learning about Italian food because my mother is Italian.</p>
+		</article>
+		<article id="contact" class="content">
+			<div class="container">
+				<form>
+
+					<label for="name">Your Name</label>
+					<input type="text" id="name" name="name" placeholder="Your name.." required>
+
+					<label for="phone">Your Phone</label>
+					<input type="tel" id="phone" name="phone">
+					<label for="email">Email Address</label>
+
+					<input type="text" id="email" name="email" placeholder="Your email..">
+					<label for="subject">Subject</label>
+					<textarea id="subject" name="subject" placeholder="Write something.."
+						style="height:200px"></textarea>
+
+					<button onclick="postForm()">Click here</button>
+
+				</form>
+			</div>
 		</article>
 	</div>
 	<!------- sticky footer ---------->
@@ -91,7 +126,9 @@
 	<br>
 	<br>
 	<footer>
-		<div><p>©2020 Joe Kelly</p></div>
+		<div>
+			<p>©2020 Joe Kelly</p>
+		</div>
 		<a href="https://github.com/pecuniam1">
 			<img src="images/github.png" alt="github logo">
 		</a>
@@ -101,7 +138,7 @@
 	</footer>
 	<script async src="js/script.js"></script>
 	<script>
-	console.log(`%c
+		console.log(`%c
     /$$$$$                           /$$   /$$           /$$ /$$          
    |__  $$                          | $$  /$$/          | $$| $$          
       | $$  /$$$$$$   /$$$$$$       | $$ /$$/   /$$$$$$ | $$| $$ /$$   /$$
@@ -116,4 +153,5 @@
 `, "color:green");
 	</script>
 </body>
+
 </html>

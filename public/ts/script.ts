@@ -5,7 +5,7 @@ const BREAKPOINT: number = 700;
  */
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
-registerSW();
+	registerSW();
 });
 
 function windowResize() {
@@ -45,20 +45,44 @@ function resetHamburger() {
  * Changes the page base on whatever div id is passed.
  * @param {string} divname - The id of the div.
  */
-function changePage(divname: string) : void {
+function changePage(divname: string): void {
 	clearAll();
-	let div:HTMLElement = document.getElementById(divname);
+	let div: HTMLElement = document.getElementById(divname);
 	div.style.display = "block";
 	resetHamburger();
 }
 /**
  * Removes all of the content-divs.
  */
-function clearAll() : void {
+function clearAll(): void {
 	let all = document.getElementsByClassName("content") as HTMLCollectionOf<HTMLElement>;
-	for (let i=0; i<all.length; i++) {
+	for (let i = 0; i < all.length; i++) {
 		all[i].style.display = "none";
 	}
+}
+
+function postForm(): void {
+	console.log("working");
+	postData('https://api.joekellyonline.com/contact', { "something": 42 })
+		.then(data => { console.log(data); })
+}
+
+async function postData(url = '', data = {}) {
+	// Default options are marked with *
+	const response = await fetch(url, {
+		method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		mode: 'cors', // no-cors, *cors, same-origin
+		cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		credentials: 'same-origin', // include, *same-origin, omit
+		headers: {
+			'Content-Type': 'application/json'
+			// 'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		redirect: 'follow', // manual, *follow, error
+		referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+		body: JSON.stringify(data) // body data type must match "Content-Type" header
+	});
+	return response.json(); // parses JSON response into native JavaScript objects
 }
 
 /**

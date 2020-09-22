@@ -30,6 +30,26 @@ function clearAll() {
         all[i].style.display = "none";
     }
 }
+function postForm() {
+    console.log("working");
+    postData('https://api.joekellyonline.com/contact', { "something": 42 })
+        .then(data => { console.log(data); });
+}
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+    return response.json();
+}
 async function registerSW() {
     if ('serviceWorker' in navigator) {
         try {
