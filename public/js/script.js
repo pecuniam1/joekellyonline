@@ -49,6 +49,7 @@ function postForm() {
         headers: {
             'Content-Type': 'application/json'
         },
+        referrerPolicy: 'unsafe-url',
         body: JSON.stringify(stuff)
     }).then(function (response) {
         console.log(`Request success: `, response);
