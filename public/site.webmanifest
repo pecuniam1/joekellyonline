@@ -1,6 +1,6 @@
 {
 	"name": "joekellyonline",
-	"short_name": "joekellyonline",
+	"short_name": "JKO",
 	"start_url": "https://www.joekellyonline.com",
 	"icons": [{
 		"src": "./images/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
 		"type": "image/png",
 		"purpose": "any maskable"
 	}],
-	"theme_color": "#ffffff",
+	"theme_color": "#000000",
 	"background_color": "#ffffff",
 	"display": "standalone"
 }
