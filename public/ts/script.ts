@@ -60,32 +60,38 @@ function clearAll(): void {
 }
 
 function postForm(): void {
- 	let url = "https://api.joekellyonline.com/contact";
-	let formData = {
-		"name": (document.getElementById("name") as HTMLInputElement).value,
-		"phone": (document.getElementById("phone") as HTMLInputElement).value,
-		"email" :(document.getElementById("email") as HTMLInputElement).value,
-		"subject": (document.getElementById("subject") as HTMLInputElement).value
+	const nameIsValid  = (document.getElementById("name") as HTMLFormElement).checkValidity();
+	const subjectIsValid  = (document.getElementById("subject") as HTMLFormElement).checkValidity();
+	if (nameIsValid && subjectIsValid) {
+		let url = "https://api.joekellyonline.com/contact";
+	   let formData = {
+		   "name": (document.getElementById("name") as HTMLInputElement).value,
+		   "phone": (document.getElementById("phone") as HTMLInputElement).value,
+		   "email" :(document.getElementById("email") as HTMLInputElement).value,
+		   "subject": (document.getElementById("subject") as HTMLInputElement).value
+	   }
+	   fetch(url, {
+		   method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		   mode: 'no-cors', // no-cors, *cors, same-origin
+		   // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		   // credentials: 'same-origin', // include, *same-origin, omit
+		   headers: {
+			   'Content-Type': 'application/json'
+			   // 'Content-Type': 'application/x-www-form-urlencoded',
+		   },
+		   // redirect: 'follow', // manual, *follow, error
+		   referrerPolicy: 'unsafe-url', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+		   body: JSON.stringify(formData) // body data type must match "Content-Type" header
+	   }).then(function(response) {
+		   console.log(`Request success: `, response); //not working, but posting ok
+		   confirmSend();
+	   }).catch(function(error) {
+		   console.log(`Request failure: `, error);
+		   confirmSend();
+	   });
+	} else {
+		alert("You need to fill out at least the name and what you want.")
 	}
-	fetch(url, {
-		method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		mode: 'no-cors', // no-cors, *cors, same-origin
-		// cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-		// credentials: 'same-origin', // include, *same-origin, omit
-		headers: {
-			'Content-Type': 'application/json'
-			// 'Content-Type': 'application/x-www-form-urlencoded',
-		},
-		// redirect: 'follow', // manual, *follow, error
-		referrerPolicy: 'unsafe-url', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-		body: JSON.stringify(formData) // body data type must match "Content-Type" header
-	}).then(function(response) {
-		console.log(`Request success: `, response); //not working, but posting ok
-		confirmSend();
-	}).catch(function(error) {
-		console.log(`Request failure: `, error);
-		confirmSend();
-	});
 }
 
 /**

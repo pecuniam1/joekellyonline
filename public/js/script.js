@@ -36,28 +36,35 @@ function clearAll() {
     }
 }
 function postForm() {
-    let url = "https://api.joekellyonline.com/contact";
-    let formData = {
-        "name": document.getElementById("name").value,
-        "phone": document.getElementById("phone").value,
-        "email": document.getElementById("email").value,
-        "subject": document.getElementById("subject").value
-    };
-    fetch(url, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        referrerPolicy: 'unsafe-url',
-        body: JSON.stringify(formData)
-    }).then(function (response) {
-        console.log(`Request success: `, response);
-        confirmSend();
-    }).catch(function (error) {
-        console.log(`Request failure: `, error);
-        confirmSend();
-    });
+    const nameIsValid = document.getElementById("name").checkValidity();
+    const subjectIsValid = document.getElementById("subject").checkValidity();
+    if (nameIsValid && subjectIsValid) {
+        let url = "https://api.joekellyonline.com/contact";
+        let formData = {
+            "name": document.getElementById("name").value,
+            "phone": document.getElementById("phone").value,
+            "email": document.getElementById("email").value,
+            "subject": document.getElementById("subject").value
+        };
+        fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            referrerPolicy: 'unsafe-url',
+            body: JSON.stringify(formData)
+        }).then(function (response) {
+            console.log(`Request success: `, response);
+            confirmSend();
+        }).catch(function (error) {
+            console.log(`Request failure: `, error);
+            confirmSend();
+        });
+    }
+    else {
+        alert("You need to fill out at least the name and what you want.");
+    }
 }
 function confirmSend() {
     document.getElementById("myForm").reset();
