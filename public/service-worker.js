@@ -3,7 +3,8 @@ const staticAssets = [
 '../',
 '../index.html',
 '../css/style.css',
-'../js/script.js'
+'../js/script.js',
+'../images/*'
 ];
 self.addEventListener('install', async e => {
 	const cache = await caches.open(cacheName);
