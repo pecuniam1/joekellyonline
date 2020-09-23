@@ -1,6 +1,7 @@
 {
 	"name": "joekellyonline",
 	"short_name": "JKO",
+	"description": "The personal website of Developer Joe Kelly.",
 	"start_url": "https://www.joekellyonline.com",
 	"icons": [{
 		"src": "./images/android-chrome-192x192.png",
@@ -15,5 +16,6 @@
 	}],
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
-	"display": "standalone"
+	"display": "standalone",
+	"lang": "en-US"
 }
