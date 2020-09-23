@@ -2,8 +2,8 @@ const BREAKPOINT = 700;
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
     registerSW();
-    showNavigationMenu();
     changePage("home");
+    showNavigationMenu();
 });
 function showNavigationMenu() {
     document.getElementById("nav").style.display = "block";

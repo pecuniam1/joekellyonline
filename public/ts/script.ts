@@ -6,8 +6,8 @@ const BREAKPOINT: number = 700;
 window.addEventListener('resize', windowResize);
 window.addEventListener('load', () => {
 	registerSW();
-	showNavigationMenu();
 	changePage("home");
+	showNavigationMenu();
 });
 
 /**
