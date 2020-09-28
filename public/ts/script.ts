@@ -1,9 +1,14 @@
-// why does full screen reload disappear home and resume?
-const BREAKPOINT: number = 700;
 /**
- * event listener to hide mobile nav menu in case of resize.
+ * Event listener to hide mobile nav menu in case of resize.
  */
-window.addEventListener('resize', windowResize);
+window.addEventListener('resize', () => {
+	resetHamburger();
+});
+
+/**
+ * Event listener to fire when page loads. This registers the service worker, shows the home-div, and shows the nav menu.
+ * The nav menu is hidden so prevent clicking on a nav link before the js functionality has loaded.
+ */
 window.addEventListener('load', () => {
 	registerSW();
 	changePage("home");
@@ -17,10 +22,6 @@ function showNavigationMenu() {
 	document.getElementById("nav").style.display = "block";
 }
 
-function windowResize() {
-	resetHamburger();
-}
-
 /**
  * Toggles the menu on and off. Also toggles the menu pane.
  */
@@ -30,6 +31,7 @@ function toggleMenu() {
 	document.getElementsByClassName('menu-bottom')[0].classList.toggle('menu-bottom-click');
 	document.getElementById('nav-links').classList.toggle('open-menu');
 }
+
 /**
  * Resets the hamburger menu to a closed state and hides menu pane.
  */
@@ -39,6 +41,7 @@ function resetHamburger() {
 	document.getElementsByClassName('menu-bottom')[0].classList.remove('menu-bottom-click');
 	document.getElementById('nav-links').classList.remove('open-menu');
 }
+
 /**
  * Changes the page base on whatever div id is passed.
  * @param {string} divname - The id of the div.
@@ -49,6 +52,7 @@ function changePage(divname: string): void {
 	div.style.display = "block";
 	resetHamburger();
 }
+
 /**
  * Removes all of the content-divs.
  */
@@ -59,6 +63,9 @@ function clearAll(): void {
 	}
 }
 
+/**
+ * This is fired when the 'submit' button is hit on the contact page.
+ */
 function postForm(): void {
 	const nameIsValid  = (document.getElementById("name") as HTMLFormElement).checkValidity();
 	const subjectIsValid  = (document.getElementById("subject") as HTMLFormElement).checkValidity();
@@ -95,7 +102,7 @@ function postForm(): void {
 }
 
 /**
- * This will eventually be a modal confirmation.
+ * This fires after the contact form has been submitted succesfully.
  */
 function confirmSend() : void {
 	(<HTMLFormElement>document.getElementById("myForm")).reset();

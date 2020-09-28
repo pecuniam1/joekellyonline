@@ -3,3 +3,4 @@
 logs/
 php-errors.logs
 php.ini
+node_modules/

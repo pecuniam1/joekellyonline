@@ -1,5 +1,6 @@
-const BREAKPOINT = 700;
-window.addEventListener('resize', windowResize);
+window.addEventListener('resize', () => {
+    resetHamburger();
+});
 window.addEventListener('load', () => {
     registerSW();
     changePage("home");
@@ -7,9 +8,6 @@ window.addEventListener('load', () => {
 });
 function showNavigationMenu() {
     document.getElementById("nav").style.display = "block";
-}
-function windowResize() {
-    resetHamburger();
 }
 function toggleMenu() {
     document.getElementsByClassName('menu-top')[0].classList.toggle('menu-top-click');
