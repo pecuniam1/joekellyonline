@@ -21,11 +21,11 @@ div#hamburger {
 	}
 
 	span.menu-middle {
-		top: $hamburger-bar * 2;
+		top: $hamburger-bar + 15;
 	}
 
 	span.menu-bottom {
-		top: $hamburger-bar * 3;
+		top: $hamburger-bar + 15 + 15;
 	}
 
 	span.menu-top-click {

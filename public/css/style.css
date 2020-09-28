@@ -180,11 +180,11 @@ div#hamburger span.menu-top {
 }
 
 div#hamburger span.menu-middle {
-  top: 20px;
+  top: 25px;
 }
 
 div#hamburger span.menu-bottom {
-  top: 30px;
+  top: 40px;
 }
 
 div#hamburger span.menu-top-click {
