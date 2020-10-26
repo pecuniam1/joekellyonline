@@ -12,9 +12,6 @@
 				"extensionName": ".min.css",
 				"savePath": "/public/css"
 			}
-		],
-		"es6-css-minify.jsMapSource": "/public/js",
-		"es6-css-minify.jsMinPath": "/public/js",
-		"es6-css-minify.genJSmap": true,
+		]
 	}
 }
