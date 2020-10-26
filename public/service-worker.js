@@ -2,8 +2,8 @@ const cacheName = 'home-v1';
 const staticAssets = [
 '../',
 '../index.html',
-'../css/style.css',
-'../js/script.js',
+'../css/style.min.css',
+'../js/script.min.js',
 '../images/*'
 ];
 self.addEventListener('install', async e => {
