@@ -17,7 +17,7 @@
   "homepage": "https://github.com/pecuniam1/joekellyonline#readme",
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "typedoc": "^0.19.2"
+    "typedoc": "^0.24.4"
   },
   "dependencies": {}
 }
